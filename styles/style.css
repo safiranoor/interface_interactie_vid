@@ -1,0 +1,56 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+
+/* naar een idee van Jen Simmons */
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+body {
+  margin:0;
+}
+
+button:not([disabled]) {
+  cursor:pointer;
+}
+
+img {
+  max-width:100%;
+}
+ body { 
+  background-color: blueviolet;
+ }
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+  --color-headings:crimson
+}
+
+ /* ... */
+
+/********************/
+/* ALGEMENE STYLING */
+/********************/
+
+:nth-last-of-type(1) section { 
+background-color: aqua;
+text-align: center;
+margin-top: 1em;
+margin-left: 33%;
+margin-right: 33%;
+padding-top: 0.5em;
+padding-bottom: 0.5em;
+}
+
+h1 {
+  color:var(--color-headings);
+}
+
+/* ... */
+
+
