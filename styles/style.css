@@ -15,11 +15,12 @@ button:not([disabled]) {
   cursor:pointer;
 }
 
-img {
+/* img {
   max-width:100%;
-}
+} */
+
  body { 
-  background-color: blueviolet;
+  background: radial-gradient(#e66465, #9198e5);
  }
 
 
@@ -35,8 +36,6 @@ img {
 :root {
   --color-headings:black
 }
-
- /* ... */
 
 /********************/
 /* ALGEMENE STYLING */
@@ -60,7 +59,8 @@ h1 {
 
 h2 {
   color:var(--color-headings);
-  font-family: 'Vogue';
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
   
 }
 
@@ -80,12 +80,16 @@ section:first-of-type {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-
 }
 
-/* section:first-of-type img { 
-} */
-
-/* ... */
-
+img:first-of-type { 
+  padding: 1%;
+  background-color: white;
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: rotate(-20deg);
+  top: 22em;
+  left: 26em;
+}
 
