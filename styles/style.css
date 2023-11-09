@@ -7,8 +7,14 @@
   box-sizing:border-box;  
 }
 
+html { 
+  height: 100vh;
+  overflow: hidden;
+}
+
 body {
   margin:0;
+  cursor: url('../images/pennetje.png') 0 50, auto;
 }
 
 button:not([disabled]) {
@@ -21,6 +27,8 @@ button:not([disabled]) {
 
  body { 
   background: radial-gradient(#e66465, #9198e5);
+  background-repeat: no-repeat;
+
  }
 
 
@@ -34,7 +42,9 @@ button:not([disabled]) {
 }
 
 :root {
-  --color-headings:black
+  --color-headings:black;
+  --achtergrondkleur:white;
+  --bordercolors:rgb(126, 175, 163);
 }
 
 /********************/
@@ -49,6 +59,7 @@ margin-left: 33%;
 margin-right: 33%;
 padding-top: 0.5em;
 padding-bottom: 0.5em;
+box-shadow: 0.5em 0.5em 1em #a59ca6;
 }
 
 h1 {
@@ -71,7 +82,13 @@ main {
   
 }
 
-section:first-of-type { 
+.pagina-1, .pagina-2, .pagina-3 {
+  position: relative;
+  top: 6em; /* Pas dit aan afhankelijk van hoeveel omhoog je ze wilt verplaatsen */
+}
+
+
+.pagina-1 { 
   background-image: url('/images/magezine.png');
   display: flex;
   width: 60vw;
@@ -80,16 +97,192 @@ section:first-of-type {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  position: absolute;
 }
 
-img:first-of-type { 
+.pagina-2 { 
+  background-image: url('/images/magezine.png');
+  display: flex;
+  width: 60vw;
+  height: 50vw;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+}
+
+.pagina-3 { 
+  background-image: url('/images/magezine.png');
+  display: flex;
+  width: 60vw;
+  height: 50vw;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+}
+
+.fotoboek { 
   padding: 1%;
   background-color: white;
   position: absolute;
-  width: 15%;
-  height: 30%;
-  transform: rotate(-20deg);
-  top: 22em;
-  left: 26em;
+  width: 25%;
+  height: 40%;
+  transform: rotate(-17deg);
+  top: 13em;
+  left: 9em;
+  transition: transform .2s;
 }
+
+.fotoboek:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.7);
+}
+
+li p{ 
+  list-style-type: none;
+  width: 27%;
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  top: 10em;
+  left: 30em;
+}
+
+ul{
+  list-style-type:none;
+}
+
+span:first-of-type { 
+  color:rgb(201, 110, 125);
+}
+
+section:last-of-type { 
+  position: relative;
+  z-index: 99;
+  top: 30em;
+  left: 11em;
+}
+
+.pagina-buttons button {
+  border-radius: 100%;
+  color: rgb(118, 45, 58);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.158) 2px 0px 10px;
+  padding: 1em 1.2em;
+  margin-left: auto;
+  margin-right: auto; 
+  background-color: #e9e6e2;
+  font-weight: 800;
+}
+
+.pagina-buttons button:first-of-type {
+  margin-right: 1em;
+}
+
+.pagina-buttons button:last-of-type {
+  margin-left: 1em;
+}
+
+.ketting { 
+  position: absolute;
+  top: -5em;
+  left: 60em;
+  transform: rotate(17deg);
+  filter: drop-shadow();
+  transition: transform .1s;
+}
+
+.ketting:hover { 
+  transform: scale(1.5);
+  filter:
+    drop-shadow(0 0 .25em rgb(255, 255, 255))
+    drop-shadow(0 0 .5em rgb(255, 255, 255));
+}
+
+.cocktail { 
+  position: absolute;
+  top: -3em;
+  left: -7em;
+  width: 25em;
+  transition: transform .1s;
+}
+
+.cocktail:hover { 
+  transform: scale(1.5);
+  filter:
+    drop-shadow(0 0 .25em rgb(255, 255, 255))
+    drop-shadow(0 0 .5em rgb(255, 255, 255));
+}
+
+.spiegel { 
+  position: absolute;
+  width: 30em;
+  transform: rotate(10deg);
+  left: -10em;
+  top: 16em;
+
+}
+
+.lipstick { 
+  position: absolute;
+  top: 25em;
+  left: -1em;
+  width: 20em;
+  transform: rotate(17deg);
+  transition: transform .1s;
+}
+
+.lipstick:hover { 
+  transform: scale(1.5);
+  filter:
+    drop-shadow(0 0 .25em rgb(255, 255, 255))
+    drop-shadow(0 0 .5em rgb(255, 255, 255));
+  
+}
+
+.oorbellen { 
+  position: absolute;
+  top: 4em;
+  left: 70em;
+  width: 10em;
+  transform: rotate(17deg);
+}
+
+.ringen { 
+  position: absolute;
+  top: 25em;
+  left: 70em;
+  width: 10em;
+  transform: rotate(17deg);
+  transition: transform .1s;
+}
+
+.ringen:hover { 
+  transform: scale(1.5);
+  filter:
+    drop-shadow(0 0 .25em rgb(255, 255, 255))
+    drop-shadow(0 0 .5em rgb(255, 255, 255));
+}
+
+.poeder { 
+  position: absolute;
+  top: 27em;
+  left: 65em;
+  width: 15em;
+  transform: rotate(17deg);
+  transition: transform .1s;
+}
+
+dialog {
+  width: 40em;
+  border-radius: 2em;
+  border-width: 0.4em;
+  background: var(--achtergrondkleur);
+  border-color: var(--bordercolors);
+  font-family: 'Raleway', sans-serif;
+  }
+
 
