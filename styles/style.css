@@ -89,7 +89,7 @@ main {
 
 
 .pagina-1 { 
-  background-image: url('./images/magezine.png');
+  background-image: url('../images/magezine.png');
   display: flex;
   width: 60vw;
   height: 50vw;
@@ -101,7 +101,7 @@ main {
 }
 
 .pagina-2 { 
-  background-image: url('./images/magezine.png');
+  background-image: url('../images/magezine.png');
   display: flex;
   width: 60vw;
   height: 50vw;
@@ -113,7 +113,7 @@ main {
 }
 
 .pagina-3 { 
-  background-image: url('./images/magezine.png');
+  background-image: url('../images/magezine.png');
   display: flex;
   width: 60vw;
   height: 50vw;
