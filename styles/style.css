@@ -1,288 +1,304 @@
 /**************/
 /* CSS REMEDY */
 /**************/
-
-/* naar een idee van Jen Simmons */
 *, *::after, *::before {
-  box-sizing:border-box;  
+  box-sizing:border-box; 
+  padding:0;
+  margin:0; 
 }
 
-html { 
-  height: 100vh;
-  overflow: hidden;
+@font-face {
+	font-family: "lettertype";
+	src: url("../font/Jost/Jost-VariableFont_wght.ttf");
 }
-
-body {
-  margin:0;
-  cursor: url('../images/pennetje.png') 0 50, auto;
-}
-
-button:not([disabled]) {
-  cursor:pointer;
-}
-
-/* img {
-  max-width:100%;
-} */
-
- body { 
-  background: radial-gradient(#e66465, #9198e5);
-  background-repeat: no-repeat;
-
- }
-
 
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
-
-@font-face {
-  font-family: "Vogue";
-  src:url("../fonts/Vogue.ttf") format("truetype");
-}
-
 :root {
-  --color-headings:black;
-  --achtergrondkleur:white;
-  --bordercolors:rgb(126, 175, 163);
-}
+	/* startje */
+	color-scheme:light dark;
 
-/********************/
-/* ALGEMENE STYLING */
-/********************/
+	--color-text:light-dark(black, white);
+	--color-background:light-dark(white,black);
+	--placeholder-color: light-dark( #aaa,white);
+	--price-color: light-dark(#aaa, #aaa);
+	--lv-font: "lettertype";
 
-header { 
-background-color: white;
-text-align: center;
-margin-top: 1em;
-margin-left: 33%;
-margin-right: 33%;
-padding-top: 0.5em;
-padding-bottom: 0.5em;
-box-shadow: 0.5em 0.5em 1em #a59ca6;
-}
-
-h1 {
-  color:var(--color-headings);
-  font-family: 'Vogue';
-  
-}
-
-h2 {
-  color:var(--color-headings);
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  
-}
-
-/* styling van het boek */
-main {
-  display: flex;
-  justify-content: center;
-  
-}
-
-.pagina-1, .pagina-2, .pagina-3 {
-  position: relative;
-  top: 6em; /* Pas dit aan afhankelijk van hoeveel omhoog je ze wilt verplaatsen */
+	--shadow-color-light: rgba(0, 0, 0, 0.2);
+  	--shadow-color-medium: rgba(0, 0, 0, 0.3);
+  	--shadow-color-dark: rgba(0, 0, 0, 0.35);
 }
 
 
-.pagina-1 { 
-  background-image: url('../images/magezine.png');
-  display: flex;
-  width: 60vw;
-  height: 50vw;
-  justify-content: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  position: absolute;
+/****************/
+/* JOUW STYLING */
+/****************/
+
+
+
+/*********** BEGINT HIER: Global Styling ***********/
+li { 
+	list-style-type: none;
 }
 
-.pagina-2 { 
-  background-image: url('../images/magezine.png');
-  display: flex;
-  width: 60vw;
-  height: 50vw;
-  justify-content: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  position: absolute;
+/* Styling voor alle titels op de website */
+h1, h2, h3 {
+	font-weight: 400;
+	font-family: var(--lv-font);
+	text-align: center;
 }
 
-.pagina-3 { 
-  background-image: url('../images/magezine.png');
-  display: flex;
-  width: 60vw;
-  height: 50vw;
-  justify-content: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  position: absolute;
+h1 { 
+	font-weight: 500;
 }
 
-.fotoboek { 
-  padding: 1%;
-  background-color: white;
-  position: absolute;
-  width: 25%;
-  height: 40%;
-  transform: rotate(-17deg);
-  top: 13em;
-  left: 9em;
-  transition: transform .2s;
+h2 { 
+	font-size: 1.4em;
+	text-align: center;
 }
 
-.fotoboek:hover {
-  -ms-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.7);
+h4 { 
+	font-family: var(--lv-font);
+	font-weight: normal;
 }
 
-li p{ 
-  list-style-type: none;
-  width: 27%;
-  font-family: 'Raleway', sans-serif;
-  position: absolute;
-  top: 10em;
-  left: 30em;
+/* Styling voor alle linkjes op de website */
+a {
+	font-family: var(--lv-font);
 }
 
-ul{
-  list-style-type:none;
+p {
+	font-weight: 400;
+	font-family: var(--lv-font);
 }
 
-span:first-of-type { 
-  color:rgb(201, 110, 125);
+.visually-hidden {
+/* A11y Project - How to hide content */
+clip: rect(0 0 0 0);
+clip-path: inset(50%);
+height: 1px;
+overflow: hidden;
+position: absolute;
+white-space: nowrap;
+width: 1px;
+}
+/*********** STOPT HIER: Global Styling ***********/
+
+
+
+
+
+
+
+
+/*********** BEGINT HIER: Styling voor alle de menubalk en hamburger menu ***********/
+header {
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	position: fixed;
+	z-index:6;
+	width: 100%;
+	left: 0;
+	background-color: var(--color-background);
+	height: 4em;
 }
 
-section:last-of-type { 
-  position: relative;
-  z-index: 99;
-  top: 30em;
-  left: 11em;
+header > h1 {
+	flex-grow:1;
+	display:flex;
+  	justify-content:center;
+	text-transform: uppercase;
+	font-size: 1.5em;
 }
 
-.pagina-buttons button {
-  border-radius: 100%;
-  color: rgb(118, 45, 58);
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.158) 2px 0px 10px;
-  padding: 1em 1.2em;
-  margin-left: auto;
-  margin-right: auto; 
-  background-color: #e9e6e2;
-  font-weight: 800;
+header > button { 
+	order: -1;
+	border:none;
+	background-color:var(--color-background);
+	padding-top: 0.2em; 
+	padding-right: 0.2em; 
+	padding-bottom: 0.2em; 
+	padding-left: 0.2em; 
 }
 
-.pagina-buttons button:first-of-type {
-  margin-right: 1em;
-}
-
-.pagina-buttons button:last-of-type {
-  margin-left: 1em;
-}
-
-.ketting { 
-  position: absolute;
-  top: -5em;
-  left: 60em;
-  transform: rotate(17deg);
-  filter: drop-shadow();
-  transition: transform .1s;
-}
-
-.ketting:hover { 
-  transform: scale(1.5);
-  filter:
-    drop-shadow(0 0 .25em rgb(255, 255, 255))
-    drop-shadow(0 0 .5em rgb(255, 255, 255));
-}
-
-.cocktail { 
-  position: absolute;
-  top: -3em;
-  left: -7em;
-  width: 25em;
-  transition: transform .1s;
-}
-
-.cocktail:hover { 
-  transform: scale(1.5);
-  filter:
-    drop-shadow(0 0 .25em rgb(255, 255, 255))
-    drop-shadow(0 0 .5em rgb(255, 255, 255));
-}
-
-.spiegel { 
-  position: absolute;
-  width: 30em;
-  transform: rotate(10deg);
-  left: -10em;
-  top: 16em;
-
-}
-
-.lipstick { 
-  position: absolute;
-  top: 25em;
-  left: -1em;
-  width: 20em;
-  transform: rotate(17deg);
-  transition: transform .1s;
-}
-
-.lipstick:hover { 
-  transform: scale(1.5);
-  filter:
-    drop-shadow(0 0 .25em rgb(255, 255, 255))
-    drop-shadow(0 0 .5em rgb(255, 255, 255));
-  
-}
-
-.oorbellen { 
-  position: absolute;
-  top: 4em;
-  left: 70em;
-  width: 10em;
-  transform: rotate(17deg);
-}
-
-.ringen { 
-  position: absolute;
-  top: 25em;
-  left: 70em;
-  width: 10em;
-  transform: rotate(17deg);
-  transition: transform .1s;
-}
-
-.ringen:hover { 
-  transform: scale(1.5);
-  filter:
-    drop-shadow(0 0 .25em rgb(255, 255, 255))
-    drop-shadow(0 0 .5em rgb(255, 255, 255));
-}
-
-.poeder { 
-  position: absolute;
-  top: 27em;
-  left: 65em;
-  width: 15em;
-  transform: rotate(17deg);
-  transition: transform .1s;
-}
-
-dialog {
-  width: 40em;
-  border-radius: 2em;
-  border-width: 0.4em;
-  background: var(--achtergrondkleur);
-  border-color: var(--bordercolors);
-  font-family: 'Raleway', sans-serif;
+nav {
+	font-family: "lettertype";
+	background-color: var(--color-background);
+	
+	position:fixed;
+	left:0;
+	right:0;
+	top: 4em;
+	bottom:0;
+	
+	translate:0% -100%;
+	transition:1s;
+	z-index: 4;
   }
+
+  nav ul {
+	display:flex;
+	flex-direction: column;
+	gap: 1em;
+	padding-left: 2em;
+  }
+
+  nav:nth-of-type(1) li {
+	font-size: x-large;
+  }
+
+  nav.toonMenu {
+   translate:0%; 
+  }
+
+  nav:nth-of-type(1) button { 
+	background-color: (var(--color-background));
+	border: none;
+}
+
+  form { 
+	padding:1em;
+	font-family: "lettertype";
+	background-color: var(--color-background);
+
+	position:fixed;
+	left:0;
+	right:0;
+	top: 0;
+	
+	translate:0% -100%;
+	transition:1s;
+	z-index: 5;
+
+	/* Bron: ChatGPT */
+	display: flex;
+    padding: 5px 10px;
+  }
+
+  /* Bron: ChatGPT */
+input[type="search"] {
+	border: none;
+	outline: none;
+	flex-grow: 1; /* Zodat de input de resterende ruimte inneemt */
+	font-size: 16px;
+	min-width: 0;
+	border-radius: 50px;
+	border: 1px solid #000;
+	padding: 0.5em .5em .5em 2em;
+
+	/* Hier zorgt ik ervoor dat het vergrootglas in de achtergrond zit waardoor ik de input kan 
+	stylen en niet de achtergrond */
+	background-image: url(../images/header/search.svg);
+	background-repeat: no-repeat;
+	background-position: .3em center;
+	}
+
+/* Bron ChatGPT */
+input::placeholder {
+	color: var(--placeholder-color); /* Placeholder-kleur */
+	font-style: italic; /* Placeholder-tekst in cursief */
+	font-size: 1.2em;
+	}
+
+form:nth-of-type(1) button { 
+	background-color: var(--color-background);
+	border: none;
+  }
+
+  form.toonZoek {
+	translate:0%; 
+	top: 4em; 
+   }
+
+    /* Bron: ChatGPT */
+   @media (max-width: 600px) { 
+
+    input[type="search"] {
+        font-size: 14px; /* Kleinere tekstgrootte op kleinere schermen */
+    }
+}
+/*********** STOPT HIER: Styling voor alle de menubalk en hamburger menu ***********/
+
+
+
+
+/*********** BEGINT HIER: Styling van de footer ***********/
+footer { 
+	padding-top: 3em;
+	border-top: 1px solid var(--price-color);
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+/* footer > section:nth-of-type(1) > section {
+	padding-left: 1em;
+	padding-right: 1em;
+} */
+
+footer section:nth-of-type(1) h2 { 
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+footer > section:nth-of-type(1) > section:nth-of-type(1) { 
+	padding-top: 2em; /* Zodat er wat ruimte ontstaat tussen de breadcrumb en fold-out */
+}
+
+/* Hier flex ik de laatste ul: Sitemap - Legal & Privacy - Cookies*/
+footer section:nth-of-type(1) > ul:nth-of-type(1){
+	display: flex;
+	justify-content: space-between;
+}
+
+/* footer section:nth-of-type(3) ul:nth-of-type(1) { 
+	padding-top: 2em;
+	padding-bottom: 2em;
+} */
+
+footer h4 { 
+	text-align: left;
+	padding-left: 1em;
+	padding-bottom: 1em;
+}
+
+
+
+
+/* Styling van functionele delen in de footer */
+/* Bron: deel van Mehmet */
+footer summary {
+	display: flex;
+	justify-content: space-between;
+
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.5em 0;
+    border-top: 1px solid var(--price-color);
+    list-style: none; /* Dit zorg ervoor dat het pijltje verwijderd wordt */
+    outline: none;
+}
+
+/*********** STOPT HIER: Styling van de footer ***********/
+
+
+
+
+
+
+
+
+/* Hier flex ik de titels met het plusje */
+/* footer section:nth-of-type(1) ul:nth-of-type(2) li{
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+	border-bottom: solid 0.5px var(--price-color);
+	border-top: solid 0.5px var(--price-color);
+} */
+
+
+
 
 
